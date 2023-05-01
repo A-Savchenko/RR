@@ -82,6 +82,10 @@ public class RR extends Critter {
                         return locs;
                     }
                 }
+                else if(neighbor instanceof RR)
+                {
+                    setDirection(getDirection()+90 );
+                }
                 else if (neighbor instanceof Boulder) {
                     neighbor.removeSelfFromGrid();
                     Kaboom k = new Kaboom();
@@ -90,11 +94,6 @@ public class RR extends Critter {
                 else if (!(neighbor instanceof Stone) && !(neighbor instanceof SickCoyote) && !(neighbor instanceof Kaboom)) {
                     locs.add(next);
                 }
-                else if(neighbor instanceof RR)
-                {
-                    setDirection(getDirection()+90 );
-                }
-
             }
         }
         return locs;

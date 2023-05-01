@@ -113,9 +113,8 @@ public class Coyote extends Critter {
             int angle = i * 45;
             Location adjacentLoc = currentLoc.getAdjacentLocation(angle);
             if (grid.isValid(adjacentLoc) && grid.get(adjacentLoc) == null) {
-                Stone stone = new Stone();
+                Stone stone = new Stone(50);
                 stone.putSelfInGrid(grid, adjacentLoc);
-                stone.setLifetime(50); // change lifetime as desired
                 break;
             }
         }
